@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1658684487 source:/media/djoker/data/code/c/gameSwap/main.c
+	"raylib.h"
+	"raygui.h"
+	"mem.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/chipmunk.h
+	<stdlib.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+	"cpTransform.h"
+	"cpSpatialIndex.h"
+	"cpArbiter.h"
+	"cpBody.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpConstraint.h"
+	"cpSpace.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/chipmunk_types.h
+	<stdint.h>
+	<float.h>
+	<math.h>
+	"TargetConditionals.h"
+	<CoreGraphics/CGGeometry.h>
+	<CoreGraphics/CGAffineTransform.h>
+	<ApplicationServices/ApplicationServices.h>
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpVect.h
+	"chipmunk_types.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpBB.h
+	"chipmunk_types.h"
+	"cpVect.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpTransform.h
+	"chipmunk_types.h"
+	"cpVect.h"
+	"cpBB.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpSpatialIndex.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpArbiter.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpBody.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpShape.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpPolyShape.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpConstraint.h
+	"cpPinJoint.h"
+	"cpSlideJoint.h"
+	"cpPivotJoint.h"
+	"cpGrooveJoint.h"
+	"cpDampedSpring.h"
+	"cpDampedRotarySpring.h"
+	"cpRotaryLimitJoint.h"
+	"cpRatchetJoint.h"
+	"cpGearJoint.h"
+	"cpSimpleMotor.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpPinJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpSlideJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpPivotJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpGrooveJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpDampedSpring.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpDampedRotarySpring.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpRotaryLimitJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpRatchetJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpGearJoint.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpSimpleMotor.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/cpSpace.h
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/chipmunk_private.h
+	"chipmunk/chipmunk.h"
+	"chipmunk/chipmunk_structs.h"
+
+1658664992 /media/djoker/data/code/c/gameSwap/include/chipmunk/chipmunk_structs.h
+	"chipmunk/chipmunk.h"
+
+1650003496 /media/djoker/data/code/c/gameSwap/include/raygui.h
+	"raylib.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdarg.h>
+	<math.h>
+	"ricons.h"
+
+1658660238 /media/djoker/data/code/c/gameSwap/include/mem.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
