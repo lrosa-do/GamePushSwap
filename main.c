@@ -1,10 +1,16 @@
 
 #include "raylib.h"
+
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"                 // Required for GUI controls
 
 #define MEMORY_IMPLEMENT
 #include "mem.h"
+
+#if defined(PLATFORM_WEB)
+    #include <emscripten/emscripten.h>
+#endif
+
 
    const int screenWidth = 800;
    const int screenHeight = 750;
@@ -311,86 +317,17 @@ void arrayAdd(int array[],int value,int count)
     }
 }
 
-int main(void)
-{
-
-
-
-    // Initialization
-    //--------------------------------------------------------------------------------------
-
-
-    InitWindow(screenWidth, screenHeight, "Game PushSwap 42");
-
-    Rectangle player = { 400, 280, 40, 40 };
-
-
-    Camera2D camera = { 0 };
-    camera.target = (Vector2){ player.x + 20.0f, player.y + 20.0f };
-    camera.offset = (Vector2){ screenWidth/2.0f, screenHeight/2.0f };
-    camera.rotation = 0.0f;
-    camera.zoom = 1.0f;
-
-    SetTargetFPS(60);
-
-
-    int defaults[]={20,40,60,80,100,120,140,160,180,200};
-     Color defaultsColors[]={RED,GREEN,BLUE,PINK,MAROON,GOLD,ORANGE,DARKGREEN,SKYBLUE,LIME,SKYBLUE,DARKPURPLE};
-
-    int array[10];
-
-
-
-Stack * a_stack=createStack();
-Stack * b_stack=createStack();
-
- int index=0;
-
-while (1)
-{
-
-    int value =defaults[GetRandomValue(0,9)];
-
-    if (!arrayContains(array,value,10))
-    {
-        array[index]=value;
-        index++;
-    }
-    if(index>=9)
-    {
-        break;
-    }
-
-}
-
-for (int i=0;i<10;i++)
-{
-pushStack(a_stack,array[i],defaultsColors[i]);
-//pushStack(a_stack,defaults[i],defaultsColors[i]);
-}
-
-
+Stack * a_stack;
+Stack * b_stack;
 int opetations=0;
 
-    while (!WindowShouldClose())
-    {
-          camera.zoom += ((float)GetMouseWheelMove()*0.05f);
 
-        if (camera.zoom > 3.0f) camera.zoom = 3.0f;
-        else if (camera.zoom < 0.1f) camera.zoom = 0.1f;
-
-
-        if (IsKeyPressed(KEY_R))
-        {
-            camera.zoom = 1.0f;
-            camera.rotation = 0.0f;
-        }
+void UpdateDrawFrame(void)
+{
 
         BeginDrawing();
 
             ClearBackground(BLACK);
-
-         //   BeginMode2D(camera);
 
 
             //post e bases
@@ -505,7 +442,76 @@ int opetations=0;
 
         EndDrawing();
 
+    
+
+}
+
+int main(void)
+{
+
+
+
+    // Initialization
+    //--------------------------------------------------------------------------------------
+
+
+    InitWindow(screenWidth, screenHeight, "Game PushSwap 42");
+
+
+    int defaults[]={20,40,60,80,100,120,140,160,180,200};
+     Color defaultsColors[]={RED,GREEN,BLUE,PINK,MAROON,GOLD,ORANGE,DARKGREEN,SKYBLUE,LIME,SKYBLUE,DARKPURPLE};
+
+    int array[10];
+
+
+
+ a_stack=createStack();
+ b_stack=createStack();
+
+ int index=0;
+
+while (1)
+{
+
+    int value =defaults[GetRandomValue(0,9)];
+
+    if (!arrayContains(array,value,10))
+    {
+        array[index]=value;
+        index++;
     }
+    if(index>=9)
+    {
+        break;
+    }
+
+}
+
+for (int i=0;i<10;i++)
+{
+pushStack(a_stack,array[i],defaultsColors[i]);
+//pushStack(a_stack,defaults[i],defaultsColors[i]);
+}
+
+
+
+
+
+
+#if defined(PLATFORM_WEB)
+    emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
+#else
+    SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
+    //--------------------------------------------------------------------------------------
+
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        UpdateDrawFrame();
+    }
+#endif
+
+
 
     clearStack(a_stack);
     freeStack(a_stack);
